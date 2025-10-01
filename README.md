@@ -1,0 +1,2 @@
+# ML-OPs
+Chaotic workflows lead to lost functions, confusing scripts, and “it works on my machine” errors that block collaboration and reproducibility. This project teaches you to replace error-prone methods with a professional automated workflow, culminating in a complete CI/CD pipeline for reliable, sharable code.
