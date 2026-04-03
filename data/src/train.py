@@ -1,3 +1,5 @@
+import os
+from joblib import dump
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -41,6 +43,31 @@ def train_model(X_train: pd.Series, y_train: pd.Series) -> Pipeline:
     )
     clf_pipeline.fit(X_train, y_train)
     return clf_pipeline
+
+
+def save_model(model: Pipeline, model_path: str) -> None:
+    """
+    Saves the trained model to disk.
+    """
+    os.makedirs(os.path.dirname(model_path), exit_ok =True)
+    dump(model, model_path)
+    print(f"Save model to {model_path}")
+
+def main(data_path: str, model_path: str) -> None:
+    """
+    Main function to load, train, evaluate, and save the model.
+    """
+    df = load_and_validate_data(data_path)
+    X_train, X_test, y_train, y_test = split_data(df)
+    clf = train_model(X_train, y_train)
+    
+    # evaluate and print accuraca
+    acc = clf.score(X_test, y_test)
+    print(f"Test accuracy: {acc: .3f}")
+
+    save_model(clf, model_path)
+          
+   
 
 if __name__ == "__main__":
     df = load_and_validate_data("data/sentiments.csv")
