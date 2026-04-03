@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Customer Feedback Analysis
 
 To run the project, install dependencies and run the main script.
@@ -19,3 +20,7 @@ pip install -r requirements.txt
 ## Train
 python src/train.py --data data/train.csv --out models/sentiment.joblib
 
+=======
+# ML-OPs
+Chaotic workflows lead to lost functions, confusing scripts, and “it works on my machine” errors that block collaboration and reproducibility. This project teaches you to replace error-prone methods with a professional automated workflow, culminating in a complete CI/CD pipeline for reliable, sharable code. Final of Project: Code Push,Automated Checks,Quality Gate: The pipeline has a built-in safety check. It will only proceed if both the tests and,Automated Build,Publish
+>>>>>>> 686a133c3a5f1fac2d859350d663d70b1b2c32c1
